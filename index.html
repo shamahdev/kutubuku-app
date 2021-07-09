@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Si Kutu Buku</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <div class="modal-container" id="addBookModal">
+        <form action="#" class="modal-content">
+            <button class="close">x</button>
+            <div class="modal-form">
+                <div class="input-group">
+                    <label for="judul">Judul Buku</label>
+                    <input type="text" id="book-title" name="judul" required>
+                </div>
+                <div class="input-group">
+                    <label for="penulis">Penulis</label>
+                    <input type="text" id="book-author" name="penulis" required>
+                </div>
+                <div class="input-group">
+                    <label for="tahun">Tahun</label>
+                    <input type="number" id="book-year" name="tahun" required>
+                </div>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="completed-checkbox" name="completed" value="completed">
+                <label for="completed">Sudah selesai dibaca</label>
+            </div>
+            <input type="submit" value="Tambahkan" name="Tambahkan" class="accept">
+        </form>
+    </div>
+    <main>
+        <header class="header">
+            <h1>Si Kutu Buku</h1>
+            <div class="search-bar">
+                <input type="text" name="" id="query" placeholder="🔍 Cari Judul buku">
+                <p>di</p>
+                <select id="bookCondition">
+                    <option selected value="all">Semua buku</option>
+                    <option value=true>Selesai dibaca</option>
+                    <option value=false>Belum Selesai dibaca</option>
+                </select>
+            </div>
+        </header>
+        <div class="shelf-container">
+            <div class="action-group">
+                <button class="add-button">📚 Tambah buku</button>
+                <label for="import-book" role="button" class="import-button">📄 Impor</label>
+                <input class="hidden" id="import-book" type="file" accept=".json">
+                <button class="export-button">📄 Ekspor</button>
+            </div>
+            <div class="list-container">
+                <div>
+                    <h2 class="section-title">Belum selesai dibaca</h2>
+                    <div id="uncompletedList"></div>
+                </div>
+                <div>
+                    <h2 class="section-title">Sudah selesai dibaca</h2>
+                    <div id="completedList"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src='data.js'></script>
+<script src='index.js'></script>
+<script src='app.js'></script>
+<script src='search.js'></script>
+<script src='modal.js'></script>
+
+</html>
